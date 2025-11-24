@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Museums & Parking — Map</title>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+  <style>
+    html, body, #map { height: 100%; margin: 0; padding: 0; }
+    .info { position: absolute; left: 10px; top: 10px; z-index: 2; background: rgba(255,255,255,0.9); padding: 6px 8px; border-radius:4px; font-family: sans-serif; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <div class="info">Basemap Complete</div>
+
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+  <script>
+    // Mapbox Access Token
+    const MAPBOX_TOKEN = 'pk.eyJ1Ijoia2FpYmEyayIsImEiOiJjbWh0aXlybGowb3VvMmxvanBhaDB6YThlIn0.bbZi9GXBCsrDH2M4bUWFMQ';
+    // Style Reference for Custom Basemap
+    const STYLE_URL = 'mapbox://styles/kaiba2k/cmidh7iz4006w01sv5ccb81rj';
+
+    mapboxgl.accessToken = MAPBOX_TOKEN;
+
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: STYLE_URL,
+      center: [-122.335167, 47.608013], // Seattle center as a starting point
+      zoom: 12
+    });
+
+    map.addControl(new mapboxgl.NavigationControl());
+  </script>
+</body>
+</html>
