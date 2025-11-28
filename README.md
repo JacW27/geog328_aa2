@@ -1,1 +1,1 @@
-# geog328_aa2
+# Seattle Museum Finder
