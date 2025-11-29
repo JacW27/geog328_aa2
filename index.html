@@ -5,14 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Museums & Parking — Map</title>
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css">
   <style>
-    html, body, #map { height: 100%; margin: 0; padding: 0; }
-    .info { position: absolute; left: 10px; top: 10px; z-index: 2; background: rgba(255,255,255,0.9); padding: 6px 8px; border-radius:4px; font-family: sans-serif; }
+    html, body { height: 100%; margin: 0; padding: 0; }
+    #map {height: 500px; width: 100%}
+    .info { margin-top: 8px; background: rgba(255,255,255,0.9); padding: 6px 8px; border-radius:4px; font-family: sans-serif; }
   </style>
 </head>
 <body>
-  <div id="map"></div>
-  <div class="info">Basemap Complete</div>
+  <div class="topnav" id="myTopnav">
+    <a href="index.html" class="active">Home</a>
+    <a href="project_description.html">Project Description</a>
+    <a href="team.html">Team</a>
+  </div>
+  <div class="page-content">
+    <h1>Seattle Museum Map</h1>
+    <p>
+      This page displays the basemap used for our Seattle Museum Finder project. Please use the top navigation bar to explore our exciting project!
+    </p>
+    <div id="map"></div>
+    <div class="info">Basemap Complete</div>
+  </div>
 
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
   <script>

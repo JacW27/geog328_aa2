@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Description — Seattle Museum Finder</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <!-- Navigation bar -->
+  <div class="topnav" id="myTopnav">
+    <a href="index.html">Home</a>
+    <a href="project_description.html" class="active">Project Description</a>
+    <a href="team.html">Team</a>
+  </div>
+
+  <!-- Page content -->
+  <div class="page-content">
+    <h1>Project Description</h1>
+    <p>
+      The <strong>Seattle Museum Finder</strong> is a multi-page web application,
+      including Project Description, Museum Map, Team pages. The intention of this web app 
+      is to help UW students, vistors, and all museum-lovers to discover major museums across 
+      Seattle and the Puget Sound area in a more convenient and straightforward way.
+    </p>
+
+     <!-- Museum slideshow -->
+    <h2>Museum Highlights</h2>
+    <div class="slideshow-container">
+
+      <div class="mySlides">
+        <div class="numbertext">1 / 4</div>
+        <img src="img/museum1.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">2 / 4</div>
+        <img src="img/museum2.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">3 / 4</div>
+        <img src="img/museum3.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">4 / 4</div>
+        <img src="img/museum4.jpg" style="width:100%">
+      </div>
+
+      <!-- Navigation arrows -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <h2>Goals</h2>
+    <ul>
+      <li>Show locations of major museums near UW and across Seattle.</li>
+      <li>Provide basic information such as name, address, etc.</li>
+      <li>Reveal which museums are closest to UW using distance-based tools.</li>
+      <li>Display nearby public parking garages to support trip planning.</li>
+    </ul>
+
+    <h2>Data</h2>
+    <p>
+      We use GeoJSON files for both museum locations and public parking garages. 
+      For the museums, we created a custom GeoJSON dataset in geojson.io manually based on information 
+      pulled from the Visit Seattle website - including each museum's name, address, etc. 
+      For parking, we began with the City of Seattle's public garages and lots dataset and used a script 
+      with GeoPandas and Shapely to retain only garages and lots within a quarter-mile walking distance 
+      of each museum before exporting the result to a separate GeoJSON layer for our map.
+    </p>
+
+    <h2>Targeted Audience</h2>
+    <p>
+      Our main users are UW students, visitors, and general museum-lovers who want a quick overview 
+      of local museums and check nearby parking options.
+    </p>
+  </div>
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+      const slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) { slideIndex = 1; }
+      if (n < 1) { slideIndex = slides.length; }
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
+    }
+  </script>
+</body>
+</html>
+
